@@ -23,6 +23,7 @@ const createWindow = () => {
   } else {
     const indexPath = join(__dirname, '../renderer/index.html');
     win.loadFile(indexPath);
+    win.webContents.openDevTools();
   }
 };
 

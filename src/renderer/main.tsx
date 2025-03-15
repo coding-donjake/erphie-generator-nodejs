@@ -1,6 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import App from './app';
+import { store } from './store';
+import { Provider } from 'react-redux';
 
-const App = () => <h1>Hello from React + Electron + TSXSS!</h1>;
-
-ReactDOM.createRoot(document.getElementById('root')!).render(<App />);
+const root = ReactDOM.createRoot(document.getElementById('root')!);
+root.render(
+  <Provider store={store}>
+    <App />
+  </Provider>
+);
