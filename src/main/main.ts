@@ -16,7 +16,7 @@ const createWindow = () => {
     },
   });
 
-  win.maximize(); // Start maximized but allow restore down
+  win.maximize();
 
   if (isDev) {
     win.loadURL('http://localhost:5173');
