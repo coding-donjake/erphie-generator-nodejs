@@ -8,8 +8,7 @@ const isDev = !app.isPackaged && process.env.NODE_ENV !== 'production';
 
 const createWindow = () => {
   const win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    fullscreen: true,
     webPreferences: {
       preload: join(__dirname, '../preload/preload.js'),
     },
