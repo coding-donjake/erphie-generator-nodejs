@@ -9,7 +9,7 @@ const GeneratorSpreadsheet = () => {
 
   return (
     <div>
-      <h1>Generator Spreadsheet</h1>
+      <h1 className='text-3xl font-bold underline'>Generator Spreadsheet</h1>
       <p>Count: {count}</p>
       <button onClick={() => dispatch(increment())}>Increment</button>
       <button onClick={() => dispatch(decrement())}>Decrement</button>
