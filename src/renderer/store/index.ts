@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import GeneratorSpreadsheetSlice from '../modules/generator-spreadsheet/slice';
+import GeneratorSpreadsheetSlice from '@/renderer/modules/generator-spreadsheet/slice';
 
 export const store = configureStore({
   reducer: {
