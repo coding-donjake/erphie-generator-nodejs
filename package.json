@@ -6,11 +6,40 @@
   "scripts": {
     "dev": "concurrently \"vite\" \"electron .\"",
     "build": "tsc && vite build",
-    "start": "cross-env NODE_ENV=production electron ."
+    "start": "cross-env NODE_ENV=production electron .",
+    "pack": "npm run build && electron-builder --dir",
+    "dist": "npm run build && electron-builder"
+  },
+  "build": {
+    "appId": "com.erphie.generator",
+    "productName": "Erphie Generator",
+    "files": [
+      "dist/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "buildResources": "assets",
+      "output": "release"
+    },
+    "win": {
+      "target": {
+        "target": "nsis",
+        "arch": ["x64"]
+      }
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Erphie Generator"
+    }
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.6.1",
-    "electron": "^35.0.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-redux": "^9.2.0",
@@ -24,6 +53,7 @@
     "@vitejs/plugin-react": "^4.3.4",
     "concurrently": "^9.1.2",
     "cross-env": "^7.0.3",
+    "electron": "^35.0.1",
     "electron-builder": "^25.1.8",
     "esbuild": "^0.25.1",
     "typescript": "^5.8.2",
