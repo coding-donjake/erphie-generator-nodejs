@@ -4,8 +4,8 @@
   "type": "module",
   "main": "dist/main/main.js",
   "scripts": {
-    "dev": "concurrently \"vite\" \"electron .\"",
     "build": "tsc && vite build",
+    "dev": "npm run build && concurrently \"vite\" \"electron .\"",
     "start": "cross-env NODE_ENV=production electron .",
     "pack": "npm run build && electron-builder --dir",
     "dist": "npm run build && electron-builder"
