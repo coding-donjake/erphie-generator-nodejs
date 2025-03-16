@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, HashRouter, Routes, Route } from 'react-router-dom';
 import GeneratorSpreadsheet from '@/renderer/modules/generator-spreadsheet/view';
+import '@/renderer/style.scss';
 
 const isDev = process.env.NODE_ENV !== 'production';
 const Router = isDev ? BrowserRouter : HashRouter;
